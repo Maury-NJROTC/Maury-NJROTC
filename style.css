@@ -1,0 +1,354 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: light;
+  font-style: normal;
+  overflow: hidden;
+}
+
+main {
+  min-height: 100vh;
+  background: linear-gradient(to right top, #272c48, #ff4500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.116), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(2rem);
+  position: relative;
+  z-index: 2;
+}
+
+.circle {
+  background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.3));
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.circle1 {
+  top: -3%;
+  right: -4%;
+}
+
+.circle2 {
+  bottom: -3%;
+  left: -4%;
+}
+
+/* Navbar styling */
+ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  padding: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-items {
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  right: 4%;
+  top: 4%;
+}
+
+.nav-items li a {
+  text-decoration: none;
+  color: #021526;
+  font-weight: 200;
+  padding-bottom: 0.5rem;
+  position: relative;
+  top: 20%;
+}
+
+.nav-items li a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0;
+  height: 2px;
+  background-color: #021526;
+  transition: width 0.3s ease;
+}
+
+.nav-items li a:hover::after {
+  width: 100%;
+}
+
+.nav-logo {
+  position: absolute;
+  left: 7%;
+  top: 3%;
+}
+
+.nav-logo, .social-logo {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.nav-logo:hover, .social-logo:hover {
+  transform: rotate(0deg) scale(1.2);
+  filter: brightness(1.4) contrast(1.4);
+}
+
+@keyframes swing {
+  0% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  100% { transform: rotate(-10deg); }
+}
+
+/* Content styling */
+.content {
+  top: 20%;
+  position: relative;
+  left: 7%;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  color: #16192b;
+}
+
+p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  width: 40rem;
+  color: rgb(255, 255, 255);
+  line-height: 2rem;
+}
+
+.join-us {
+  background-color: #16192b;
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  position: absolute;
+  margin-top: 2rem;
+  font-family: "Montserrat", sans-serif;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.join-us:hover {
+  transform: rotate(0deg) scale(1.2);
+  filter: brightness(1.4) contrast(1.4);
+}
+
+/* Mobile and Tablet view */
+@media (max-width: 1024px) {
+  .nav-items {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-items.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px; /* Adjust to be below the hamburger */
+    right: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent glassy background */
+    backdrop-filter: blur(10px); /* Glass effect */
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.5s ease;
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 100;
+  }
+
+  .nav-items.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .nav-items li {
+    margin-bottom: 15px; /* Add space between items */
+  }
+
+  .nav-items li a {
+    font-size: 1.2rem;
+    color: #16192b;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .nav-items li a:hover {
+    color: #ff4500; /* Add hover effect */
+  }
+
+  .social-logo {
+    transition: transform 0.3s ease, filter 0.3s ease;
+    margin-top: 10px; /* Space between nav items and social icons */
+  }
+
+  .social-logo:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+  }
+}
+
+@media (max-width: 480px) {
+  ul {
+    flex-direction: column;
+  }
+
+  .nav-items {
+    position: relative;
+    top: 2rem;
+  }
+
+  .nav-logo {
+    position: relative;
+    top: 2rem;
+    left: 0;
+  }
+
+  .anchor-parent {
+    display: none;
+  }
+
+  h1 {
+    font-size: 2.5rem; /* Smaller font size for mobile */
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+    width: 95%; /* Maximize width for mobile view */
+  }
+
+  .join-us {
+    font-size: 0.8rem; /* Smaller button text */
+    padding: 0.6rem 1rem;
+    position: relative;
+    margin-top: 1rem; /* Adjust margin for mobile view */
+  }
+}
+
+/* Hamburger menu styling */
+.hamburger {
+  display: none; /* Hide by default */
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  z-index: 200; /* Ensure it's above other elements */
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #021526;
+  transition: 0.3s;
+}
+
+/* Show hamburger on tablets and mobiles */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: flex; /* Show the hamburger menu */
+  }
+}
+
+/* General styling for the anchor image */
+.anchor-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed; /* Fixed position to stay in the same place */
+  bottom: 0; /* Position at the bottom */
+  right: 0; /* Position at the right */
+  width: 20%; /* Width of the container */
+  padding: 1rem; /* Optional padding for spacing */
+  z-index: 39; /* Ensure it's above other content */
+}
+
+.anchor {
+  max-width: 100%; /* Ensure the image scales properly */
+  height: auto; /* Maintain aspect ratio */
+  animation: swing 3s infinite ease-in-out;
+}
+
+@media (max-width: 1024px) {
+  .anchor-parent {
+    width: 50%; /* Reduce width for tablet view */
+  }
+
+  .anchor {
+    max-width: 80%; /* Scale down the image */
+  }
+}
+
+@media (max-width: 480px) {
+  .anchor-parent {
+    width: 40%; /* Increase container width for mobile view */
+    padding: 0.5rem; /* Adjust padding as needed */
+  }
+
+  .anchor {
+    height: 300px; /* Increase size for better visibility */
+    width: auto; /* Maintain aspect ratio */
+  }
+}
+@media (max-width: 1024px) {
+  h1 {
+    font-size: 3rem; /* Adjust font size for tablets */
+    margin-bottom: 2rem;
+  }
+
+  p {
+    font-size: 1rem; /* Slightly smaller font size for tablets */
+    width: 90%; /* Allow more room for text */
+  }
+
+  .join-us {
+    font-size: 0.9rem; /* Slightly smaller button text */
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+/* Mobile view adjustments */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2.5rem; /* Smaller font size for mobile */
+    margin-bottom: 1.5rem;
+  }
+
+  p {
+    font-size: 0.9rem; /* Smaller font size for mobile */
+    width: 95%; /* Maximize width for mobile view */
+  }
+
+  .join-us {
+    font-size: 0.8rem; /* Smaller button text */
+    padding: 0.6rem 1rem;
+    position: relative;
+    margin-top: 1rem; /* Adjust margin for mobile view */
+  }
+}
+

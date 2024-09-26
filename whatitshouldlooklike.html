@@ -1,0 +1,795 @@
+<style>
+    body {
+      overflow: scroll;
+      overflow-x: hidden;
+      height: 200vh;
+    }
+    .container {
+      bottom: 0%;
+      height: 50vh;
+      width: 100%;
+      background-color: white;
+      position: absolute;
+      z-index: 99;
+    }
+    h1 {
+      position: absolute;
+      left: 40%;
+      top: 20%;
+      font-size: 90px;
+    }
+    h2 {
+      font-size: 3rem;
+      line-height: 5rem;
+      color: #16192b;
+    }
+    .cs1 {
+      position: relative;
+      padding-top: 100px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 210px 2fr 0.5fr;
+    }
+    .c2 {
+      grid-row-start: 2;
+    }
+    p {
+      color: black;
+      font-family: "Montserrat", sans-serif;
+    }
+    .flex {
+      position: relative;
+      left: 0%;
+      padding-left:15% ;
+    }
+    img {
+      border-radius: 20px;
+    }
+
+    .sub-container {
+      display: grid;
+      grid-template-columns: 20rem 20rem 20rem;
+      grid-template-rows: 13rem;
+      gap: 7rem;
+      left: 18%;
+      position: relative;
+      background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.116),
+        rgba(255, 255, 255, 0)
+      );
+    }
+    .box1,
+    .box2,
+    .box3 {
+      text-align: center;
+      background: linear-gradient(to right top, #272c48, #ff4500);
+      border-radius: 1rem;
+    }
+    .span-attributes {
+      font-size: 2.4rem;
+      line-height: 7rem;
+      font-family: "Protest Guerrilla", sans-serif;
+    }
+    .span-explain {
+      font-size: 20px;
+      font-family: "Protest Guerrilla", sans-serif;
+    }
+    h3 {
+      font-family: "Montserrat", sans-serif;
+      padding-top: 2rem;
+      color: #16192b;
+    }
+    .box123s {
+      background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0.116),
+        rgba(255, 255, 255, 0.123)
+      );
+      height: 100%;
+    }
+    .new-section {
+      margin-top: 13rem;
+      width: 100%;
+    }
+    .hist,
+    .hist1 {
+      text-align: center;
+    }
+    .hist1 {
+      padding-bottom: 7rem;
+    }
+    .ph {
+      margin: auto;
+      margin-top: 2rem;
+      text-align: center;
+      width: 90rem;
+    }
+    .activity-grid {
+      display: grid;
+      grid-template-columns: 30rem 30rem 30rem;
+      grid-template-rows: 20rem 20rem;
+      gap: 1rem;
+      position: relative;
+      left: 13%;
+      margin-top: 5rem;
+    }
+    .expl {
+      padding-top: 2rem;
+      width: 450px;
+    }
+    .instructors-grid {
+      display: grid;
+      grid-template-columns: 18rem 18rem;
+      gap: 9rem;
+      position: relative;
+      left: 30%;
+      padding-bottom: 7rem;
+    }
+    .card {
+      border-radius: 7px;
+      height: 25rem;
+      width: 17rem;
+      background-color: white;
+      box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px,
+        rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px,
+        rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+    }
+
+    .card-border {
+      position: absolute;
+      border-top-left-radius: 7px;
+      border-top-right-radius: 7px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .pfp {
+      position: absolute;
+      height: 150px;
+      width: 140px;
+      border-radius: 100%;
+      left: 3.5%;
+      top: 12%;
+      border: 7px solid white;
+    }
+    .pfp1 {
+      position: absolute;
+      height: 150px;
+      width: 130px;
+      border-radius: 100%;
+      top: 12%;
+      left: 26.4%;
+      border: 7px solid white;
+    }
+    .txt-container {
+      position: absolute;
+      top: 45%;
+      left: 5.8%;
+      font-size: 27px;
+    }
+    .txt-container1 {
+      position: absolute;
+      top: 45%;
+      left: 28.9%;
+      font-size: 27px;
+    }
+    .rank-lt{
+      padding-right:1.5%;
+      border-right: 1px solid #16192b;
+    }
+    .name-row{
+      position: absolute;
+      top: 55%;
+      left: 1.5%;
+    }
+    .p-b{
+      padding-left: 1%;
+    }
+
+    .rank-lt1{
+      padding-right:1.5%;
+      border-right: 1px solid #16192b;
+    }
+    .name-row1{
+      position: absolute;
+      top: 55%;
+      left: 24.5%;
+    }
+    .p-b1{
+      padding-left: 1%;
+    }
+    .rnk-img{
+      position: absolute;
+      height: 30px;
+      top: 65%;
+      left: 5%;
+    }
+    .rnk-img1{
+      position: absolute;
+      height: 60px;
+      top: 64%;
+      left: 28.9%;
+    }
+
+
+
+
+
+
+
+
+/* Base Styles */
+body {
+overflow-x: hidden;
+height: 200vh;
+}
+
+/* Styles for tablets and smaller desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+/* Header */
+h1 {
+  font-size: 5vw;
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Navbar Logo */
+.nav-logo {
+  height: 50px;
+}
+
+/* Flex Container */
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+}
+
+/* Grid Layouts */
+.activity-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.instructors-grid {
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.sub-container {
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* Centering for .cs1 */
+.cs1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  align-items: start;
+  gap: 2rem;
+  padding: 0 1rem;
+}
+
+.c1 {
+  grid-row: 1;
+  text-align: center;
+}
+
+.c2 {
+  grid-row: 2;
+  max-width: 800px;
+  width: 100%;
+  margin: 0;
+  text-align: center; /* Center text in .c2 */
+}
+
+.c2 p {
+  text-align: center; /* Center text in the paragraph */
+  margin: 0; /* Remove margin if needed */
+}
+
+.c3 {
+  grid-row: 3;
+  margin-top: 1rem;
+  max-width: 600px;
+  width: 90%;
+}
+
+/* Card Adjustments */
+.card {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.box1, .box2, .box3 {
+  padding: 20px;
+  text-align: center;
+}
+
+/* Image Adjustments */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pfp, .pfp1 {
+  width: 100px;
+  height: 100px;
+}
+
+.rnk-img, .rnk-img1 {
+  height: 30px;
+}
+
+/* Typography */
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1rem;
+}
+}
+
+/* Styles for mobile devices (max-width: 768px) */
+@media (max-width: 768px) {
+/* Header */
+h1 {
+  font-size: 7vw;
+  margin: 10px 0;
+}
+
+/* Navbar Logo */
+.nav-logo {
+  height: 40px;
+}
+
+/* Flex Container */
+.flex {
+  padding: 0;
+  text-align: center;
+  margin: 0;
+}
+
+/* Grid Layouts */
+.activity-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.instructors-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.sub-container {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+/* Centering for .cs1 */
+.cs1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  align-items: start;
+  gap: 1rem;
+  padding: 0 0.5rem;
+}
+
+.c1 {
+  grid-row: 1;
+  text-align: center;
+}
+
+.c2 {
+  grid-row: 2;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.c2 p {
+  text-align: center; /* Center text in the paragraph */
+}
+
+.c3 {
+  grid-row: 3;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Card Adjustments */
+.card {
+  width: 100%;
+  height: auto;
+}
+
+.box1, .box2, .box3 {
+  padding: 15px;
+  text-align: center;
+}
+
+/* Image Adjustments */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pfp, .pfp1 {
+  width: 80px;
+  height: 80px;
+}
+
+.rnk-img, .rnk-img1 {
+  height: 25px;
+}
+
+/* Typography */
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.5rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
+p {
+  font-size: 0.875rem;
+}
+}
+
+/* Styles for very small devices (max-width: 480px) */
+@media (max-width: 480px) {
+/* Header */
+h1 {
+  font-size: 8vw;
+  margin: 10px 0;
+}
+
+/* Navbar Logo */
+.nav-logo {
+  height: 30px;
+}
+
+/* Flex Container */
+.flex {
+  padding: 0;
+  text-align: center;
+}
+
+/* Grid Layouts */
+.activity-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.instructors-grid {
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.sub-container {
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+/* Centering for .cs1 */
+.cs1 {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto auto;
+  justify-items: center;
+  align-items: start;
+  gap: 0.5rem;
+  padding: 0;
+}
+
+.c1 {
+  grid-row: 1;
+  text-align: center;
+}
+
+.c2 {
+  grid-row: 2;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.c2 p {
+  text-align: center; /* Center text in the paragraph */
+}
+
+.c3 {
+  grid-row: 3;
+  margin-top: 1rem;
+  width: 100%;
+  max-width: 300px;
+}
+
+/* Card Adjustments */
+.card {
+  width: 100%;
+  height: auto;
+}
+
+.box1, .box2, .box3 {
+  padding: 10px;
+  text-align: center;
+}
+
+/* Image Adjustments */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pfp, .pfp1 {
+  width: 70px;
+  height: 70px;
+}
+
+.rnk-img, .rnk-img1 {
+  height: 20px;
+}
+
+/* Typography */
+h2 {
+  font-size: 1rem;
+  line-height: 1.25rem;
+  text-align: center;
+}
+
+h3 {
+  font-size: 0.875rem;
+}
+
+p {
+  font-size: 0.75rem;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+  </style>
+</head>
+<body>
+  <main>
+    <section class="glass">
+      <nav>
+        <ul>
+          <li>
+            <img
+              src="./images/logos/maurynjrotc.png"
+              class="nav-logo"
+              height="60"
+              alt="Maury NJROTC logo"
+            />
+          </li>
+          <div class="nav-items">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./chainofcommand.html">Chain of Command</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+            <li><a href="./gallery.html">Gallery</a></li>
+            <li>
+              <img
+                src="./images/logos/instagram.png"
+                height="40"
+                class="social-logo"
+                alt="Instagram"
+              />
+            </li>
+            <li>
+              <img
+                src="./images/logos/facebook.png"
+                height="38"
+                class="social-logo"
+                alt="Facebook"
+              />
+            </li>
+          </div>
+        </ul>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+
+      <h1 class="au">About Us</h1>
+    </section>
+
+    <div class="container">
+      <div class="flex">
+        <div class="cs1">
+          <div class="c1">
+            <h2>
+              We are a leading force in naval education, shaping tomorrow’s
+              leaders.
+            </h2>
+          </div>
+          <div class="c2">
+            <p>
+              Maury High School stands as a premier institution committed to
+              academic excellence and personal growth. Our mission is to
+              provide an engaging and supportive learning environment where
+              students can thrive both inside and outside the classroom. We
+              are a vibrant community of educators, staff, and students,
+              dedicated to developing leadership skills, achieving academic
+              success, and serving our community. With a rich tradition of
+              excellence, Maury High School continues to evolve, offering
+              innovative programs that equip students for future success in a
+              dynamic world.
+            </p>
+          </div>
+          <div class="c3">
+            <img
+              src="./images/section-images/1 (3).jpeg"
+              alt=""
+              height="400px"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="sub-container">
+        <div class="box1">
+          <div class="box123s">
+            <h3>
+              <span class="span-attributes">150+</span><br />
+              Cadets
+            </h3>
+          </div>
+        </div>
+        <div class="box2">
+          <div class="box123s">
+            <h3>
+              <span class="span-attributes">100%</span><br />Graduation Rate
+            </h3>
+          </div>
+        </div>
+        <div class="box3">
+          <div class="box123s">
+            <h3>
+              <span class="span-attributes">7000+</span><br />Community
+              Service Hours
+            </h3>
+          </div>
+        </div>
+      </div>
+      <div class="new-section"></div>
+
+      <h2 class="hist1">Instructors</h2>
+      <div class="instructors-grid">
+        <div class="warrant">
+          <div class="card">
+            <img
+              src="./images/section-images/instructorcardbg.png"
+              class="card-border"
+              height="150px"
+              width="272px"
+              alt=""
+            />
+            <img src="./images/Staff Images/SNSI.jpg" class="pfp" alt="" />
+            <div class="txt-container"><h4 class="">SNSI</h4></div>
+
+            <div class="name-row"><p><span class="rank-lt">CWO4</span> <span class="p-b">Ernest Brinson</span></p></div>
+          <div class="rnk"><img src="./images/other(ranks etc)/Warrant.png" class="rnk-img" alt=""></div>
+          </div>
+        </div>
+        <div class="senior">
+          <div class="card">
+            <img
+              src="./images/section-images/instructorcardbg.png"
+              class="card-border"
+              height="150px"
+              width="272px"
+              alt=""
+            />
+            <img src="./images/Staff Images/NSI.jpg" class="pfp1" alt="" />
+            <div class="txt-container1"><h4 class="">NSI</h4></div>
+            <div class="name-row1"><p><span class="rank-lt1">SCPO</span> <span class="p-b1">William Bolden</span></p></div>
+            <div class="rnk"><img src="./images/other(ranks etc)/Senior chief.png" class="rnk-img1" alt=""></div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="hist">Program Highlights</h2>
+      <p class="ph">
+        Maury NJROTC focuses on developing cadets through leadership training,
+        academic excellence, and community service, providing them with the
+        skills and experiences needed to excel personally, academically, and
+        within their communities.
+      </p>
+
+      <div class="activity-grid">
+        <div class="lt-training">
+          <img
+            src="./images/section-images/lt training.JPG"
+            height="320px"
+            width="400px"
+            alt=""
+          />
+          <p class="expl">
+            <span class="span-explain">Leadership Training:</span> Cadets
+            undergo structured training to build leadership skills, fostering
+            confidence and responsibility through hands-on experiences.
+          </p>
+        </div>
+
+        <div class="academic">
+          <img
+            src="./images/section-images/academics.png"
+            height="320px"
+            width="400px"
+            alt=""
+          />
+          <p class="expl">
+            <span class="span-explain">Academic Excellence:</span> Emphasis on
+            strong academic performance ensures that cadets are well-prepared
+            for future personal and professional success.
+          </p>
+        </div>
+        <div class="community-service">
+          <img
+            src="./images/section-images/community-service.png"
+            height="320px"
+            width="400px"
+            alt=""
+          />
+          <p class="expl">
+            <span class="span-explain">Community Service:</span> Cadets
+            actively participate in service projects, giving back to the local
+            community and instilling a sense of civic duty and teamwork.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <div class="circle circle1"></div>
+
+  <script>
+    const hamburger = document.querySelector(".hamburger");
+    const navItems = document.querySelector(".nav-items");
+
+    hamburger.addEventListener("click", () => {
+      navItems.classList.toggle("active");
+    });
+  </script>
+</body>
+</html>
